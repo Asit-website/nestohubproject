@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const brokerSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+const userSchema = new mongoose.Schema({
     firstName:{
         type:String,
         required:true,
@@ -90,21 +90,13 @@ const brokerSchema = new mongoose.Schema({
         type:Object,
         required:true
     },
-    images1:{
-        type:Object,
-        required:true
-    },
-    images2:{
-        type:Object,
-        required:true
-    },
-    images3:{
-        type:Object,
-        required:true
-    },
-    
+
+    role:{
+        type:String,
+        default:'user'
+    }
 },{
     timestamps:true
-});
+})
 
-module.exports = mongoose.model('Brokers',brokerSchema);
+module.exports = mongoose.model("Users",userSchema);
